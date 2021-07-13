@@ -40,7 +40,7 @@ namespace TelCo.ColorCoder
                 throw new ArgumentException(
                     string.Format("Unknown Colors: {0}", pair.ToString()));
             }
-            return (majorIndex * colorMapMinor.Length) + (minorIndex + 1);
+            return (majorIndex * getColor.colorMapMinor.Length) + (minorIndex + 1);
         }
 
     }
