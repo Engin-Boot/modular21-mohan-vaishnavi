@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace TelCo.ColorCoder
 {  
-	class colorPair
+	class ColorPair
 	{
 		public Color majorColor;
         	public Color minorColor;
