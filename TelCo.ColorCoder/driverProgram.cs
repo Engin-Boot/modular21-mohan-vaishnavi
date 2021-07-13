@@ -9,8 +9,9 @@ namespace TelCo.ColorCoder
 	class driverProgram 
 	{
 	
-    private static void Main(string[] args)
+    private static void Main(string[] args)   
         {
+	    ColorManual.printManual();
             int pairNumber = 4;
             ColorPair testPair1 = GetColor.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
