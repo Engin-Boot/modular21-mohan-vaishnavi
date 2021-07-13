@@ -4,44 +4,32 @@ using System.Drawing;
 
 namespace TelCo.ColorCoder
 {  
-
 	class Pair
 	{
 		public static Color[] colorMapMajor;
-
-        public static Color[] colorMapMinor;
-		
-	
-
-        static getNumber()
-        {
-            colorMapMajor = new Color[] { Color.White, Color.Red, Color.Black, Color.Yellow, Color.Violet };
-            colorMapMinor = new Color[] { Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray };
-        }
-		
-	public override string ToString()
-        {
-            return string.Format("MajorColor:{0}, MinorColor:{1}", majorColor.Name, minorColor.Name);
-        }
-
+        	public static Color[] colorMapMinor;
+				
+		public override string ToString()
+		{
+		    return string.Format("MajorColor:{0}, MinorColor:{1}", majorColor.Name, minorColor.Name);
+		}
         public static int GetPairNumberFromColor(Pair pair)
         {
             // Find the major color in the array and get the index
             int majorIndex = -1;
-            for (int i = 0; i < colorMapMajor.Length; i++)
+            for (int i = 0; i < getColor.colorMapMajor.Length; i++)
             {
-                if (colorMapMajor[i] == pair.majorColor)
+                if (getColor.colorMapMajor[i] == pair.majorColor)
                 {
                     majorIndex = i;
                     break;
                 }
             }
-
             // Find the minor color in the array and get the index
             int minorIndex = -1;
-            for (int i = 0; i < colorMapMinor.Length; i++)
+            for (int i = 0; i < getColor.colorMapMinor.Length; i++)
             {
-                if (colorMapMinor[i] == pair.minorColor)
+                if (getColor.colorMapMinor[i] == pair.minorColor)
                 {
                     minorIndex = i;
                     break;
@@ -53,9 +41,6 @@ namespace TelCo.ColorCoder
                 throw new ArgumentException(
                     string.Format("Unknown Colors: {0}", pair.ToString()));
             }
-
-            // Compute pair number and Return  
-            // (Note: +1 in compute is because pair number is 1 based, not zero)
             return (majorIndex * colorMapMinor.Length) + (minorIndex + 1);
         }
 
