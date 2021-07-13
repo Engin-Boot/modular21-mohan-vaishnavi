@@ -4,10 +4,11 @@ using System.Drawing;
 
 namespace TelCo.ColorCoder
 {  
-	class Pair
+	class colorPair
 	{
 		public Color majorColor;
-        public Color minorColor;
+        	public Color minorColor;
+		
 		public override string ToString()
 		{
 		    return string.Format("MajorColor:{0}, MinorColor:{1}", majorColor.Name, minorColor.Name);
@@ -27,7 +28,7 @@ namespace TelCo.ColorCoder
 			return index;
 		}
 		
-        public static int GetPairNumberFromColor(Pair pair)
+        public static int GetPairNumberFromColor(ColorPair pair)
         {
             // Find the major color in the array and get the index
             int majorIndex = GetColorIndex(GetColor.colorMapMajor, pair.majorColor);
