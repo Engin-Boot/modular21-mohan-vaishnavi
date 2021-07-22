@@ -11,7 +11,13 @@ namespace TelCo.ColorCoder
 	
     private static void Main(string[] args)   
         {
-	    ColorManual.printManual();
+	        
+            ColorManual c1 = new ColorManual(new ColorManualTester());
+            c1.PrintManual();
+
+            ColorManual c2 = new ColorManual(new ColorManualPrinter());
+            c2.PrintManual();
+
             int pairNumber = 4;
             ColorPair testPair1 = GetColor.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
